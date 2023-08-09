@@ -53,7 +53,7 @@ services:
             - ${REDIS_PORT:-6379}:6379
         volumes:
             - ./docker/redis/redis.conf:/etc/redis.conf
-            - redis:/storage
+            - redis_data:/storage
         networks:
             app_network:
                 ipv4_address: ${IPV4_NETWORK:-172.25.2}.12
@@ -63,7 +63,7 @@ services:
 volumes:
     data:
         driver: local
-    redis:
+    redis_data:
         driver: local
         driver_opts:
             type: "none"
