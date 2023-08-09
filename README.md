@@ -1,6 +1,6 @@
 # Laravel 10x Sandbox Project
 
-Welcome to the Laravel 10x Sandbox project! This repository serves as a test environment for interviews. The project is containerized using Docker to ensure a smooth and consistent setup across different machines. Below are the instructions to set up and run the project.
+Welcome to the Laravel 10x Sandbox project! This repository serves as a test environment for different purposes. The project is containerized using Docker to ensure a smooth and consistent setup across different machines. Below are the instructions to set up and run the project.
 
 ## Prerequisites
 
@@ -14,8 +14,8 @@ Welcome to the Laravel 10x Sandbox project! This repository serves as a test env
    Start by cloning the repository to your local machine:
 
    ```
-   git clone https://github.com/Elentra-Training/laravel-interview.git laravel-interview
-   cd laravel-interview
+   git clone https://github.com/Elentra-Training/laravel-sandbox.git laravel-sandbox
+   cd laravel-sandbox
    ```
 
 2. **Start Docker Containers**
@@ -75,7 +75,7 @@ Welcome to the Laravel 10x Sandbox project! This repository serves as a test env
 
 ## Usage
 
-Once you've set up the project, you can start working on the tasks provided to you in the interview.
+Once you've set up the project, you can create features for the project.
 
 ## Troubleshooting
 
