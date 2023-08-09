@@ -34,4 +34,4 @@ jobs:
         run: cp .env.ci .env.testing
 
       - name: Execute tests
-        run: composer tests
+        run: composer tests-summary
