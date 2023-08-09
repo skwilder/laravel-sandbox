@@ -1,0 +1,37 @@
+name: tests
+
+on:
+  push:
+
+jobs:
+  php-81:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_ROOT_PASSWORD: test_pass
+          MYSQL_DATABASE: test_db
+        ports:
+          - 33306:3306
+
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: composer install --no-interaction
+
+      - name: Copy env vars
+        run: cp .env.ci .env.testing
+
+      - name: Execute tests
+        run: composer tests
