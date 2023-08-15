@@ -92,3 +92,14 @@ If you encounter any issues while setting up or running the project:
    ```
    docker-compose ps
    ```
+   
+3. Change any of the following environment variables in the `.env` file if you're experiencing conflicts with ips or ports:
+
+   ```properties
+    WEB_HOSTNAME=127.0.0.200
+    IPV4_NETWORK=173.25.2
+    REDIS_PORT=6380
+    DATABASE_HOST_PORT=3307
+   ```
+
+The above values are intended to avoid conflicts with other services running on your machine. You can change them to whatever you want.
