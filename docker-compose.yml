@@ -26,6 +26,7 @@ services:
 
     db:
         container_name: sandbox_app_db
+        platform: linux/amd64 # needed for macos
         build:
             context: ./docker/mysql
         ports:

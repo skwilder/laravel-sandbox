@@ -103,3 +103,31 @@ If you encounter any issues while setting up or running the project:
    ```
 
 The above values are intended to avoid conflicts with other services running on your machine. You can change them to whatever you want.
+
+4. MacOS Instructions
+
+   * The `cp .env.example .env` instructions had to run prior to running the docker-compose up --build -d after running into this error message Failed to load /Users/test/Documents/projects/laravel-sandbox/.env: open /Users/test/Documents/projects/laravel-sandbox/.env: no such file or directory
+
+   * if running an M1 or M2 ARM processor add the platform property listed below
+
+      ```properties
+      db:
+         container_name: sandbox_app_db
+         platform: linux/amd64 # needed for macos
+      ```
+
+      the error message will look something like this 
+      `failed to solve: mysql:5.7: no match for platform in manifest sha256:f566819f2eee3a60cf5ea6c8b7d1bfc9de62e34268bf62dc34870c4fca8a85d1: not found`
+
+   * Error: SQLSTATE[HY000] [2002] Connection refused 
+      * At this point I userd the .env.docker file instead of the .env.example file provided in the instructions.  
+      * Updated the mysql credentials in the docker/mysql/vars.env to match the docker files credentials 
+      * Commented out the code below
+         ```properties
+            # Customized values for the sandbox
+            # This prevents conflicts with other containers
+            # WEB_HOSTNAME=127.0.0.200
+            # IPV4_NETWORK=173.25.2
+            # REDIS_PORT=6380
+            # DATABASE_HOST_PORT=3307
+         ```
